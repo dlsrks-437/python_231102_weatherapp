@@ -17,4 +17,10 @@ today_temp = weather_soup.find('div', {'class' : 'temperature_text'}).text
 today_temp = today_temp[6:11]
 print(today_temp)
 
+area_text = weather_soup.find('h2', {'class' : 'title'}).text
+print(area_text)
+
+weather_text = weather_soup.find('span', {'class' : 'weather before_slash'}).text
+print(weather_text)
+
 
