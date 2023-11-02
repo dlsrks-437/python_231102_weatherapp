@@ -39,10 +39,16 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>450</y>
+     <y>439</y>
      <width>100</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY엽서M</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">border:1px solid rgb(79, 79, 79)</string>
@@ -58,10 +64,16 @@
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>450</y>
+     <y>439</y>
      <width>100</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY엽서M</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">border:1px solid rgb(79, 79, 79)</string>
@@ -77,10 +89,16 @@
    <property name="geometry">
     <rect>
      <x>320</x>
-     <y>450</y>
+     <y>439</y>
      <width>100</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>HY엽서M</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">border:1px solid rgb(79, 79, 79)</string>
@@ -101,12 +119,18 @@
      <height>100</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe Print</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border:1px solid rgb(80, 255, 92)
 </string>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>24.8</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -121,12 +145,18 @@
      <height>100</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>휴먼편지체</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border:1px solid rgb(209, 198, 68)
 </string>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>매우나쁨</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -141,12 +171,18 @@
      <height>100</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>휴먼편지체</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">border:1px solid rgb(150, 34, 148)
 </string>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>좋은</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
