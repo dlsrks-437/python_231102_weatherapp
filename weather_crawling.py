@@ -17,7 +17,7 @@ weather_soup = BeautifulSoup(weather_html.text, 'html.parser')
 
 
 today_temp = weather_soup.find('div', {'class' : 'temperature_text'}).text
-today_temp = today_temp[6:11]
+today_temp = today_temp[6:].strip()
 print(today_temp)  # 현재 온도
 
 
@@ -34,9 +34,7 @@ yester_wether = yester_wether[:13].strip()
 print(yester_wether)  # 어제 대비 온도변화
 
 
-temp_feel1 = weather_soup.select('dl.summary_list>dd')
-#<dl>중에서 클래스가 summary_list인 태그를 찾은 후 그 안의 <dd>태그들을 모두 리스트로 반환
-temp_feel1_text = temp_feel1[0].text
+temp_feel1 = weather_soup.find('div',{'class':'weather_info'}).find('dl',{'class':'summary_list'}).find('dd',{'class':'desc'}).text
 print(temp_feel1)
 
 temp_feel2 = weather_soup.find('div', {'class' : "sort"}).text
@@ -45,6 +43,7 @@ print(temp_feel2)  # 체감온도
 
 
 dust_info = weather_soup.select('ul.today_chart_list>li')
+# print(dust_info)
 dust1_info = dust_info[0].find('span', {'class' : "txt"}).text
 print(dust1_info)  # 미세먼지
 dust2_info = dust_info[1].find('span', {'class' : "txt"}).text
