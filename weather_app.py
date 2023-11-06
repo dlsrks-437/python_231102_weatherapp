@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
 import threading
-
+import time
 
 form_class = uic.loadUiType("UI/weather_app_UI.ui")[0]
 
