@@ -28,6 +28,37 @@ class WeatherWin(QMainWindow, form_class):
         area_text = weather_soup.find('h2', {'class': 'title'}).text
         self.temp_loc.setText(area_text)
 
+        today_temp = weather_soup.find('div', {'class': 'temperature_text'}).text
+        today_temp = today_temp[6:].strip()
+        self.temperature.setText(today_temp)
+
+        weather_text = weather_soup.find('span', {'class': 'weather before_slash'}).text
+        self.weather.setText(weather_text)
+
+        yester_wether = weather_soup.find('p', {'class': "summary"}).text
+        yester_wether = yester_wether[:13].strip()
+        self.temp_yesterday.setText( yester_wether )
+
+        temp_feel1 = weather_soup.find('div', {'class': 'weather_info'}).find('dl', {'class': 'summary_list'}).find(
+            'dd', {'class': 'desc'}).text
+        self.temp_feel.setText(temp_feel1)
+
+        dust_info = weather_soup.select('ul.today_chart_list>li')
+        dust1_info = dust_info[0].find('span', {'class': "txt"}).text  # 미세먼지
+        self.par_matt.setText(dust1_info)
+        dust2_info = dust_info[1].find('span', {'class': "txt"}).text  # 초미세먼지
+        self.par_matt.setText(dust2_info)
+
+
+    def WeatherImage(self, weather_text):
+        # 날씨 종류 : 맑음, 흐림, 눈, 비, 구름 많음 등...
+        if weather_text == '눈' :
+            weather_img = QPixmap("icon/snow.png")
+        elif weather_text == '비' :
+            weather_img = QPixmap("icon/rain.png")
+
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     myApp = WeatherWin()

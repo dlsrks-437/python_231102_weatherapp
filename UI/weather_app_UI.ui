@@ -267,7 +267,7 @@
     <string>날씨 이미지</string>
    </property>
   </widget>
-  <widget class="QLabel" name="temperate">
+  <widget class="QLabel" name="temperature">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -287,6 +287,27 @@
    </property>
    <property name="text">
     <string>37.5</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="weather">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>300</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
