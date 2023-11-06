@@ -251,22 +251,6 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="weather_img">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>200</y>
-     <width>100</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:rgb(170, 255, 255)</string>
-   </property>
-   <property name="text">
-    <string>날씨 이미지</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="temperature">
    <property name="geometry">
     <rect>
@@ -311,6 +295,16 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="weather_img">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>200</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
    </property>
   </widget>
  </widget>
