@@ -7,6 +7,9 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
+import threading
+import time
+
 form_class = uic.loadUiType("UI/weather_app_UI.ui")[0]
 
 class WeatherWin(QMainWindow, form_class):
@@ -18,6 +21,7 @@ class WeatherWin(QMainWindow, form_class):
         self.statusBar().showMessage("Weather Application Ver 1.0")
 
         self.temp_find.clicked.connect(self.request_weather)
+        self.temp_find.clicked.connect(self.refresh)
 
 
     def request_weather(self):
@@ -49,6 +53,7 @@ class WeatherWin(QMainWindow, form_class):
             self.par_matt.setText(dust1_info)
             dust2_info = dust_info[1].find('span', {'class': "txt"}).text  # 초미세먼지
             self.par_matt.setText(dust2_info)
+
         except Exception as e:
             print(e)
             self.temp_loc.setText("지역명 오류")
@@ -57,10 +62,26 @@ class WeatherWin(QMainWindow, form_class):
     def WeatherImage(self, weather_text):
         # 날씨 종류 : 맑음, 흐림, 눈, 비, 구름 많음 등...
         if weather_text == '눈' :
-            weather_img = QPixmap("icon/snow.png")
+            weather_icon = QPixmap("icon/snow.png")
+            self.weather_img.setPixmap(QPixmap(weather_icon))
         elif weather_text == '비' :
-            weather_img = QPixmap("icon/rain.png")
+            weather_icon = QPixmap("icon/rain.png")
+            self.weather_img.setPixmap(QPixmap(weather_icon))
+        elif weather_text == '맑음' :
+            weather_icon = QPixmap("icon/sun.png")
+            self.weather_img.setPixmap(QPixmap(weather_icon))
+        elif weather_text == '흐림' :
+            weather_icon = QPixmap("icon/cloud.png")
+            self.weather_img.setPixmap(QPixmap(weather_icon))
+        elif weather_text == '구름많음' :
+            weather_icon = QPixmap("icon/cloud.png")
+            self.weather_img.setPixmap(QPixmap(weather_icon))
+        else:
+            self.weather_img.setText(weather_text)
 
+    def refresh(self):  # 자동갱신
+        self.request_weather()
+        threading.Timer(60, self.refresh).start()
 
 
 if __name__ == '__main__':
