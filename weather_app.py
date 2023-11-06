@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from PyQt5 import uic
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
+from PyQt5.QtCore import Qt
 
 import threading
 import time
@@ -19,6 +20,7 @@ class WeatherWin(QMainWindow, form_class):
         self.setWindowTitle("오늘의 날씨")
         self.setWindowIcon(QIcon('icon/weather_app.png'))
         self.statusBar().showMessage("Weather Application Ver 1.0")
+        self.setWindowFlags(Qt.WindowStaysOnTopHint)  # 윈도우를 항상 맨 위로 유지
 
         self.temp_find.clicked.connect(self.request_weather)
         self.temp_find.clicked.connect(self.refresh)
@@ -82,6 +84,7 @@ class WeatherWin(QMainWindow, form_class):
     def refresh(self):  # 자동갱신
         self.request_weather()
         threading.Timer(60, self.refresh).start()
+
 
 
 if __name__ == '__main__':
